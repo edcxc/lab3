@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html> 
+<html> 
+<head> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            color: #333; 
+            background-color: #f2f2f2; 
+            padding: 15px; 
+        } 
+ 
+        h1 { 
+            text-align: center; 
+            font-size: 2em; 
+            text-shadow: 2px 2px 4px #aaa; 
+        } 
+ 
+        img { 
+            width: 300px; 
+            height: 400px; 
+            display: block; 
+            margin: 0 auto; 
+        } 
+ 
+        input[type=button]:hover { 
+            background-color: #ddd; 
+        } 
+ 
+        .bordered { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            margin: 10px 0; 
+        } 
+    </style> 
+    <title>Резюме</title> 
+</head> 
+<body> 
+    <h1>Мое резюме</h1> 
+   <img src="foto.jpg" alt="Фото">  
+    <div id="name" class="bordered">Имя: <span id="firstName">Сергей</span></div> 
+    <div id="surname" class="bordered">Фамилия: <span id="lastName">Цыганков</span></div> 
+    <div class="bordered">Возраст: <span id="age">21</span></div> 
+    <input type="text" id="newLastName" placeholder="Новая фамилия"> 
+    <input type="button" value="Изменить фамилию" onclick="changeLastName()"> 
+    <input type="button" value="Другой цвет фона" onclick="changeBgColor()"> 
+ 
+    <script> 
+        function changeLastName() { 
+            var newLastName = document.getElementById('newLastName').value; 
+            if (newLastName) { 
+                document.getElementById('lastName').textContent = newLastName; 
+            } 
+        } 
+ 
+        function changeBgColor() { 
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16); 
+            document.body.style.backgroundColor = randomColor; 
+        } 
+    </script> 
+</body> 
+</html>
